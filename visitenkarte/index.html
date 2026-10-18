@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visitenkarte · Entwurf Marion</title>
+<meta name="description" content="Druckentwurf: Visitenkarte 85 × 55 mm für Marion, systemische Beratung.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Visitenkarte · Entwurf Marion">
+<meta property="og:description" content="Druckentwurf: Visitenkarte 85 × 55 mm für Marion, systemische Beratung.">
+<meta property="og:url" content="https://andreasgrundke-ops.github.io/entwurf-mar-2610/visitenkarte/">
+<meta property="og:image" content="https://andreasgrundke-ops.github.io/entwurf-mar-2610/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gewebtes Muster mit weißem Schild: Familien- und Paarberatung">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%2334509e'/%3E%3Crect y='12' width='32' height='6' fill='%234862b0'/%3E%3Crect x='7' y='8' width='18' height='14' rx='1' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/muster.css">
+<style>
+@font-face{font-family:"Young Serif";src:url("../assets/fonts/young-serif/YoungSerif-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Atkinson Hyperlegible Next";src:url("../assets/fonts/atkinson-hyperlegible-next/AtkinsonHyperlegibleNext-wght.woff2") format("woff2");font-weight:200 800;font-display:swap}
+:root{--kalk:#f2f2ee;--tinte:#1b1e27;--grau:#545866;--linie:#cfd0c8;--link:#34509e;--serif:"Young Serif",Georgia,serif;--sans:"Atkinson Hyperlegible Next","Segoe UI",system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--tinte);background:#d9dbdd;line-height:1.5}
+::selection{background:var(--link);color:#fff}
+:focus-visible{outline:3px solid var(--tinte);outline-offset:3px}
+h1,h2,h3,p{margin:0}
+.muster{position:relative;overflow:hidden;background-color:var(--grund);background-image:var(--bild);background-size:var(--tw) var(--th);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.schild{position:relative;background:#fff;border-radius:1px}
+.schild::before{content:"";position:absolute;inset:var(--rahmen,2.4mm);border:1px solid rgba(27,30,39,.18);pointer-events:none}
+.ph{background:#e7e7e0;padding:0 .2em;border-radius:1px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.leiste{max-width:1180px;margin:0 auto 24px;padding:20px 20px 0;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.leiste h1{font-family:var(--serif);font-weight:400;font-size:1.5rem}
+.leiste p{color:var(--grau);font-size:.95rem;margin-top:4px;max-width:60ch}
+.leiste .tasten{display:flex;flex-wrap:wrap;gap:10px}
+.taste{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:2px;background:var(--tinte);color:#fff;font:600 1rem var(--sans);text-decoration:none;border:0;cursor:pointer}
+.taste.hell{background:#fff;color:var(--tinte);border:1px solid var(--tinte)}
+.entwurf{max-width:1180px;margin:24px auto 40px;padding:16px 20px 0;border-top:1px solid #b9bab2;font-size:.875rem;color:var(--grau)}
+@media print{.leiste,.entwurf,.nur-schirm{display:none!important}}
+
+.buehne{max-width:1180px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:40px;justify-content:center}
+.ansicht{display:flex;flex-direction:column;gap:10px;align-items:center}
+.ansicht h2{font-family:var(--serif);font-weight:400;font-size:1.125rem}
+.zoom{zoom:2.6}
+@media (max-width:960px){.zoom{zoom:1.8}}
+@media (max-width:700px){.zoom{zoom:.95}.reihe .karte{zoom:.75}}
+/* Karte inkl. 3 mm Beschnitt: 91 × 61 mm; Endformat 85 × 55 mm */
+.karte{width:91mm;height:61mm;position:relative;overflow:hidden;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.karte:not(.muster){background:#fff}
+.schnitt{position:absolute;inset:3mm;outline:.2mm dashed rgba(27,30,39,.55);pointer-events:none;z-index:5}
+.vorne .ruecken{position:absolute;left:0;top:0;bottom:0;width:15mm}
+.vorne .inhalt{position:absolute;left:21mm;top:8mm;right:7mm;bottom:7mm;display:flex;flex-direction:column;justify-content:space-between}
+.vorne .name{font-family:var(--serif);font-size:13pt;line-height:1.1}
+.vorne .status{font-size:7.5pt;color:var(--grau);margin-top:1.2mm;line-height:1.3}
+.vorne ul{list-style:none;padding:0;margin:0;font-size:7.5pt;line-height:1.5}
+.hinten{display:flex;align-items:center;justify-content:center}
+.hinten .schild{--rahmen:1.2mm;padding:4.5mm 5.5mm;text-align:left;box-shadow:0 .6mm 2mm -.4mm rgba(27,30,39,.4)}
+.hinten .schild b{display:block;font-family:var(--serif);font-weight:400;font-size:13pt;line-height:1.1}
+.hinten .schild span{display:block;font-size:7.5pt;color:var(--grau);margin-top:1mm}
+.satz{max-width:1180px;margin:56px auto 0;padding:0 20px}
+.satz h2{font-family:var(--serif);font-weight:400;font-size:1.25rem}
+.satz p{color:var(--grau);margin-top:6px;max-width:62ch}
+.reihe{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px}
+.reihe .karte{zoom:1}
+.reihe .schnitt{display:none}
+.reihe .karte{width:85mm;height:55mm}
+@media print{
+  @page{size:91mm 61mm;margin:0}
+  body{background:#fff}
+  .buehne{display:block;padding:0;max-width:none}
+  .ansicht{display:block}
+  .ansicht h2,.schnitt,.satz{display:none}
+  .zoom{zoom:1}
+  .ansicht+.ansicht{break-before:page}
+}
+</style>
+</head>
+<body>
+<div class="leiste">
+  <div><h1>Visitenkarte · 85 × 55 mm</h1>
+  <p>Vorder- und Rückseite in doppelter Größe. Die gestrichelte Linie zeigt den Endschnitt, außen herum liegen 3 mm Beschnitt. Der Druck (PDF) gibt beide Seiten mit Beschnitt aus, 91 × 61 mm.</p></div>
+  <div class="tasten"><button class="taste" type="button" onclick="window.print()">Drucken / als PDF speichern</button><a class="taste hell" href="../hub/index.html">Zur Übersicht</a></div>
+</div>
+<main>
+<div class="buehne">
+  <section class="ansicht" aria-label="Vorderseite">
+    <h2>Vorderseite</h2>
+    <div class="zoom"><div class="karte vorne">
+      <span class="ruecken muster m-streit" aria-hidden="true"></span>
+      <div class="inhalt">
+        <div><p class="name">Marion <span class="ph">[NACHNAME]</span></p><p class="status">in Weiterbildung zur<br>Systemischen Beraterin</p></div>
+        <ul><li><span class="ph">[TELEFON]</span></li><li><span class="ph">[E-MAIL]</span></li><li><span class="ph">[WEBADRESSE]</span></li><li><span class="ph">[@INSTAGRAM]</span></li><li>vor Ort in <span class="ph">[ORT]</span> und online</li></ul>
+      </div>
+      <span class="schnitt" aria-hidden="true"></span>
+    </div></div>
+  </section>
+  <section class="ansicht" aria-label="Rückseite">
+    <h2>Rückseite</h2>
+    <div class="zoom"><div class="karte hinten muster m-streit"><div class="schild"><b>Marion</b><span>Systemische Beratung · in Weiterbildung</span></div><span class="schnitt" aria-hidden="true"></span></div></div>
+  </section>
+</div>
+<section class="satz nur-schirm" aria-labelledby="satz-titel">
+  <h2 id="satz-titel">Idee: ein Satz aus sechs Rückseiten</h2>
+  <p>Jedes Anliegen hat sein eigenes Muster. Im Digitaldruck lassen sich die sechs Rückseiten ohne Mehraufwand mischen. So wird die Karte zum Gesprächsanlass, und beim Kinderarzt liegt zum Beispiel die gelbe Karte „Sorgen ums Kind“.</p>
+  <div class="reihe"><div class="karte hinten muster m-streit"><div class="schild"><b>Marion</b><span>Systemische Beratung · in Weiterbildung</span></div></div><div class="karte hinten muster m-kind"><div class="schild"><b>Marion</b><span>Systemische Beratung · in Weiterbildung</span></div></div><div class="karte hinten muster m-paar"><div class="schild"><b>Marion</b><span>Systemische Beratung · in Weiterbildung</span></div></div><div class="karte hinten muster m-patch"><div class="schild"><b>Marion</b><span>Systemische Beratung · in Weiterbildung</span></div></div><div class="karte hinten muster m-viel"><div class="schild"><b>Marion</b><span>Systemische Beratung · in Weiterbildung</span></div></div><div class="karte hinten muster m-wandel"><div class="schild"><b>Marion</b><span>Systemische Beratung · in Weiterbildung</span></div></div></div>
+</section>
+</main>
+<p class="entwurf">Entwurf / Mockup · Gestaltung: Grundke IT-Service · v2.1.0 · 19.10.2026 · Entwurf mit KI-Unterstützung erstellt</p>
+</body>
+</html>

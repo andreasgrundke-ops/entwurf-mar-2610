@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flyer A4 Wickelfalz · Entwurf Marion</title>
+<meta name="description" content="Druckentwurf: Flyer A4 quer mit Wickelfalz für Marion, systemische Beratung.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Flyer A4 Wickelfalz · Entwurf Marion">
+<meta property="og:description" content="Druckentwurf: Flyer A4 quer mit Wickelfalz für Marion, systemische Beratung.">
+<meta property="og:url" content="https://andreasgrundke-ops.github.io/entwurf-mar-2610/flyer/">
+<meta property="og:image" content="https://andreasgrundke-ops.github.io/entwurf-mar-2610/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gewebtes Muster mit weißem Schild: Familien- und Paarberatung">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%2334509e'/%3E%3Crect y='12' width='32' height='6' fill='%234862b0'/%3E%3Crect x='7' y='8' width='18' height='14' rx='1' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../css/muster.css">
+<style>
+@font-face{font-family:"Young Serif";src:url("../assets/fonts/young-serif/YoungSerif-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Atkinson Hyperlegible Next";src:url("../assets/fonts/atkinson-hyperlegible-next/AtkinsonHyperlegibleNext-wght.woff2") format("woff2");font-weight:200 800;font-display:swap}
+:root{--kalk:#f2f2ee;--tinte:#1b1e27;--grau:#545866;--linie:#cfd0c8;--link:#34509e;--serif:"Young Serif",Georgia,serif;--sans:"Atkinson Hyperlegible Next","Segoe UI",system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--tinte);background:#d9dbdd;line-height:1.5}
+::selection{background:var(--link);color:#fff}
+:focus-visible{outline:3px solid var(--tinte);outline-offset:3px}
+h1,h2,h3,p{margin:0}
+.muster{position:relative;overflow:hidden;background-color:var(--grund);background-image:var(--bild);background-size:var(--tw) var(--th);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.schild{position:relative;background:#fff;border-radius:1px}
+.schild::before{content:"";position:absolute;inset:var(--rahmen,2.4mm);border:1px solid rgba(27,30,39,.18);pointer-events:none}
+.ph{background:#e7e7e0;padding:0 .2em;border-radius:1px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.leiste{max-width:1180px;margin:0 auto 24px;padding:20px 20px 0;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.leiste h1{font-family:var(--serif);font-weight:400;font-size:1.5rem}
+.leiste p{color:var(--grau);font-size:.95rem;margin-top:4px;max-width:60ch}
+.leiste .tasten{display:flex;flex-wrap:wrap;gap:10px}
+.taste{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:2px;background:var(--tinte);color:#fff;font:600 1rem var(--sans);text-decoration:none;border:0;cursor:pointer}
+.taste.hell{background:#fff;color:var(--tinte);border:1px solid var(--tinte)}
+.entwurf{max-width:1180px;margin:24px auto 40px;padding:16px 20px 0;border-top:1px solid #b9bab2;font-size:.875rem;color:var(--grau)}
+@media print{.leiste,.entwurf,.nur-schirm{display:none!important}}
+
+body{padding-bottom:0}
+.bogen{width:297mm;height:210mm;margin:0 auto 18px;background:var(--kalk);display:flex;box-shadow:0 14px 40px -10px rgba(27,30,39,.35);position:relative}
+.bogen .nr{position:absolute;top:-22px;left:0;font-size:.85rem;color:var(--grau)}
+.feld{height:210mm;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.w97{width:97mm}.w100{width:100mm}
+.innen{padding:0 9mm 9mm}
+.kopfstreifen{height:16mm;margin:0 -9mm 8mm;flex:none}
+.falz{position:absolute;top:0;bottom:0;width:0;border-left:1px dashed #9a9b93}
+.falz span{position:absolute;top:4px;left:4px;font-size:9px;color:#6d6e68;white-space:nowrap}
+/* Typo Druck: alles ≥ 12 pt */
+.feld h2{font-family:var(--serif);font-weight:400;font-size:19pt;line-height:1.15}
+.feld p,.feld li{font-size:12pt;line-height:1.38}
+.feld .gr{color:var(--grau)}
+/* A Klappe außen: Einladung */
+.einladung{padding:16mm 9mm 10mm;justify-content:space-between}
+.einladung p{margin-top:5mm}
+.einladung .zeile{border-top:1px solid var(--linie);padding-top:4mm}
+/* B Rückseite: Kontakt */
+.kontakt{padding:16mm 9mm 10mm;background:#fff}
+.kontakt .wer{margin-top:9mm}
+.kontakt .erst{margin-top:auto;background:var(--kalk);padding:4.5mm 5mm;border-radius:1px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.kontakt .erst b{display:block;font-family:var(--serif);font-weight:400;font-size:14pt;line-height:1.2}
+.kontakt .erst span.t{display:block;margin-top:1.5mm}
+.kontakt ul{list-style:none;padding:0;margin:6mm 0 0}
+.kontakt li{padding:2.6mm 0;border-bottom:1px solid var(--linie)}
+.kontakt li b{display:block;font-weight:600}
+.kontakt .name{font-family:var(--serif);font-size:15pt}
+/* C Titel */
+.titel{justify-content:flex-end;padding:0 8mm 34mm}
+.titel .schild{padding:11mm 9mm 9mm;box-shadow:0 1.5mm 5mm -1mm rgba(27,30,39,.35)}
+.titel .h{font-family:var(--serif);font-weight:400;font-size:24pt;line-height:1.12}
+.titel .marke{margin-top:7mm;padding-top:4mm;border-top:1px solid var(--linie)}
+.titel .marke b{display:block;font-family:var(--serif);font-weight:400;font-size:16pt}
+.titel .marke span{display:block;font-size:12pt;color:var(--grau)}
+/* D Anliegen */
+.anl{list-style:none;padding:0;margin:5mm 0 0}
+.anl li{display:grid;grid-template-columns:7mm 1fr;gap:3.5mm;padding:2.2mm 0;border-bottom:1px solid var(--linie)}
+.anl .farbe{width:7mm;height:100%;min-height:10mm;border-radius:1px}
+.anl b{display:block;font-family:var(--serif);font-weight:400;font-size:13pt;line-height:1.2}
+.anl span.t{display:block}
+/* E Ablauf */
+.schritte{list-style:none;padding:0;margin:5mm 0 0}
+.schritte li{display:grid;grid-template-columns:10mm 1fr;gap:3mm;padding:2.6mm 0;border-bottom:1px solid var(--linie)}
+.schritte .z{font-family:var(--serif);font-size:24pt;line-height:1}
+.schritte b{display:block;font-family:var(--serif);font-weight:400;font-size:13pt}
+.kosten{margin-top:5mm}
+/* F Über mich + Hinweis */
+.ueber p{margin-top:3mm}
+.akut{margin-top:auto;background:#fff;padding:4mm 4.5mm;border-radius:1px}
+.akut h3{font-family:var(--serif);font-weight:400;font-size:14pt}
+.akut p{font-size:12pt;line-height:1.32;margin-top:1.6mm}
+.akut b{font-weight:700}
+@media screen and (max-width:699px){main{zoom:.3;padding:0 4px}.bogen .nr{font-size:2rem;top:-44px}.bogen{margin-top:56px}}
+@media screen and (min-width:700px) and (max-width:999px){main{zoom:.6}.bogen{margin-top:28px}}
+@media screen and (min-width:1000px) and (max-width:1160px){main{zoom:.85}.bogen{margin-top:28px}}
+@media print{
+  @page{size:A4 landscape;margin:0}
+  html,body{background:#fff;margin:0;padding:0}
+  .bogen{overflow:hidden}
+  .bogen{margin:0;box-shadow:none;break-after:page;page-break-after:always}
+  .bogen:last-of-type{break-after:auto;page-break-after:auto}
+  .falz,.bogen .nr{display:none}
+}
+</style>
+</head>
+<body>
+<div class="leiste">
+  <div><h1>Flyer · A4 quer, Wickelfalz</h1>
+  <p>Seite 1 außen, Seite 2 innen. Drucken: beidseitig, A4 quer, an der kurzen Kante wenden, ohne Ränder. Die gestrichelten Falzlinien erscheinen nur hier am Bildschirm.</p></div>
+  <div class="tasten"><button class="taste" type="button" onclick="window.print()">Drucken / als PDF speichern</button><a class="taste hell" href="../hub/index.html">Zur Übersicht</a></div>
+</div>
+<main>
+<section class="bogen" aria-label="Außenseite">
+  <span class="nr">Außen: Klappe · Rückseite · Titel</span>
+  <div class="feld w97 einladung">
+    <div>
+      <h2>Ein erster Schritt muss nicht groß sein.</h2>
+      <p>Manchmal hilft ein Blick von außen, um wieder Bewegung ins Miteinander zu bringen.</p>
+      <p>Ich begleite Familien, Paare und Einzelne dabei, festgefahrene Muster zu verstehen und eigene Wege zu finden: ruhig, auf Augenhöhe und ohne Schuldfrage.</p>
+    </div>
+    <p class="zeile">Im Erstgespräch klären wir, was dich beschäftigt und ob es passt. <span class="ph">[ERSTGESPRÄCH KOSTENLOS? – VORSCHLAG]</span></p>
+  </div>
+  <div class="feld w100 kontakt">
+    <h2>So erreichst du mich</h2>
+    <p class="wer"><span class="name">Marion <span class="ph">[NACHNAME]</span></span><br><span class="gr">in Weiterbildung zur Systemischen Beraterin</span></p>
+    <ul>
+      <li><b>Telefon</b><span class="ph">[TELEFON]</span></li>
+      <li><b>E-Mail</b><span class="ph">[E-MAIL]</span></li>
+      <li><b>Web</b><span class="ph">[WEBADRESSE]</span></li>
+      <li><b>Wo</b>vor Ort in <span class="ph">[ORT]</span> und online</li>
+      <li><b>Folgen auf Instagram</b><span class="ph">[@INSTAGRAM]</span></li>
+    </ul>
+    <p class="erst"><b>Erstgespräch vereinbaren</b><span class="t">Ruf an oder schreib mir kurz, worum es geht. Ich melde mich innerhalb von <span class="ph">[ZEITRAUM]</span>.</span></p>
+  </div>
+  <div class="feld w100 titel muster m-streit gross">
+    
+    <div class="schild">
+      <p class="h">Wenn es in der Familie nur noch knirscht.</p>
+      <p class="marke"><b>Marion</b><span>Systemische Beratung ·<br>in Weiterbildung</span></p>
+    </div>
+  </div>
+  <span class="falz" style="left:97mm" aria-hidden="true"><span>Falz</span></span>
+  <span class="falz" style="left:197mm" aria-hidden="true"><span>Falz</span></span>
+</section>
+
+<section class="bogen" aria-label="Innenseite">
+  <span class="nr">Innen: Anliegen · Ablauf · Über mich (Klappe)</span>
+  <div class="feld w100 innen">
+    <div class="kopfstreifen" aria-hidden="true" style="display:flex"><span class="muster m-streit" style="flex:1"></span><span class="muster m-kind" style="flex:1"></span><span class="muster m-paar" style="flex:1"></span><span class="muster m-patch" style="flex:1"></span><span class="muster m-viel" style="flex:1"></span><span class="muster m-wandel" style="flex:1"></span></div>
+    <h2>Womit Menschen zu mir kommen</h2>
+    <ul class="anl"><li><span class="farbe muster m-streit" aria-hidden="true"></span><span><b>Streit in der Familie</b><span class="t gr">Jedes Gespräch endet im selben Streit.</span></span></li><li><span class="farbe muster m-kind" aria-hidden="true"></span><span><b>Sorgen ums Kind</b><span class="t gr">Du kommst nicht mehr an dein Kind heran.</span></span></li><li><span class="farbe muster m-paar" aria-hidden="true"></span><span><b>Partnerschaft</b><span class="t gr">Ihr redet aneinander vorbei.</span></span></li><li><span class="farbe muster m-patch" aria-hidden="true"></span><span><b>Trennung & Patchwork</b><span class="t gr">Wer gehört wohin, was braucht jede:r?</span></span></li><li><span class="farbe muster m-viel" aria-hidden="true"></span><span><b>Überforderung</b><span class="t gr">Es ist zu viel, und du weißt nicht, wo anfangen.</span></span></li><li><span class="farbe muster m-wandel" aria-hidden="true"></span><span><b>Lebensübergänge</b><span class="t gr">Etwas endet, das Neue ist noch nicht da.</span></span></li></ul>
+  </div>
+  <div class="feld w100 innen">
+    <div class="kopfstreifen muster m-streit" aria-hidden="true"></div>
+    <h2>So läuft Beratung ab</h2>
+    <ol class="schritte">
+      <li><span class="z">1</span><span><b>Kontakt</b>Nachricht, E-Mail oder Anruf.</span></li>
+      <li><span class="z">2</span><span><b>Erstgespräch</b>Wir klären dein Anliegen und ob es passt. Was du erzählst, bleibt bei mir.</span></li>
+      <li><span class="z">3</span><span><b>Sitzungen</b><span class="ph">[DAUER]</span> je Sitzung, vor Ort in <span class="ph">[ORT]</span> oder online.</span></li>
+      <li><span class="z">4</span><span><b>Abschluss</b>Du entscheidest, wann es genug ist.</span></li>
+    </ol>
+    <p class="kosten gr">Kosten: <span class="ph">[PREIS PRO SITZUNG]</span>, vorab offen besprochen.</p>
+  </div>
+  <div class="feld w97 innen">
+    <div class="kopfstreifen muster m-wandel" aria-hidden="true"></div>
+    <h2>Ich bin Marion.</h2>
+    <div class="ueber">
+      <p>Ich bin in Weiterbildung zur Systemischen Beraterin und stehe kurz vor dem Abschluss.</p>
+      <p class="gr"><span class="ph">[DEIN WEG IN 2–3 SÄTZEN]</span></p>
+      <p class="gr">Systemische Beratung ist keine Psychotherapie.</p>
+    </div>
+    <div class="akut">
+      <h3>Wenn es akut ist</h3>
+      <p><b>Bei Lebensgefahr: 112</b></p>
+      <p>Telefonseelsorge <b>0800 111 0 111</b> oder <b>0800 111 0 222</b>, rund um die Uhr, kostenfrei</p>
+      <p>Nummer gegen Kummer <b>116 111</b>, Mo–Sa 14–20 Uhr</p>
+      <p>Elterntelefon <b>0800 111 0 550</b>, Mo–Fr 9–17, Di und Do bis 19 Uhr</p>
+      <p class="gr">Beratung ersetzt keine ärztliche oder psychotherapeutische Behandlung.</p>
+    </div>
+  </div>
+  <span class="falz" style="left:100mm" aria-hidden="true"><span>Falz</span></span>
+  <span class="falz" style="left:200mm" aria-hidden="true"><span>Falz</span></span>
+</section>
+</main>
+<p class="entwurf">Entwurf / Mockup · Gestaltung: Grundke IT-Service · v2.1.0 · 19.10.2026 · Entwurf mit KI-Unterstützung erstellt</p>
+</body>
+</html>
