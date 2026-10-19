@@ -1,0 +1,66 @@
+/* Instagram-Skizze v3 „Am Küchentisch“ · ergänzt site.css, ändert sie nicht */
+.ig-kopf{padding-block:clamp(2.5rem,1.5rem + 4vw,4.5rem)}
+.ig-kopf h1{font-size:clamp(2.2rem,1.4rem + 3.4vw,4rem);max-width:16ch}
+.ig-kopf p{margin-top:var(--s3);max-width:60ch;color:var(--tuch-tinte-2)}
+.ig-kopf .tischkarte{margin-top:var(--s5)}
+.ig-haupt{padding-block:var(--s7) var(--abschnitt)}
+.ig-flaeche{display:grid;grid-template-columns:minmax(0,390px) minmax(0,1fr);gap:clamp(2rem,1rem + 4vw,4.5rem);align-items:start}
+.ig-flaeche h2{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.3rem);margin-bottom:var(--s4)}
+@media (max-width:1000px){.ig-flaeche{grid-template-columns:minmax(0,1fr)}}
+
+/* Profil */
+.ig-profil{background:var(--porzellan);border-radius:var(--r-karte);box-shadow:var(--schatten-2);padding:1.4rem 1.2rem 1.2rem;max-width:390px;width:100%}
+.ig-oben{display:flex;align-items:center;gap:1rem}
+.ig-avatar{position:relative;width:86px;height:86px;flex:none}
+.ig-avatar img{width:100%;height:100%}
+.ig-avatar span{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-size:2rem;color:var(--himbeer-tief)}
+.ig-name{font-weight:800}
+.ig-zahlen{font-size:var(--gr-klein);color:var(--aubergine-weich)}
+.ig-bio{margin-top:1rem;font-size:var(--gr-klein);line-height:1.5}
+.ig-bio b{display:block;font-size:1rem}
+.ig-bio>span{display:block}
+.ig-highlights{display:flex;gap:.7rem;margin-top:1.2rem;list-style:none;overflow:hidden}
+.ig-highlights li{display:flex;flex-direction:column;align-items:center;gap:.3rem;width:62px;font-size:.78rem;font-weight:600;flex:none}
+.ig-highlights img{width:58px;height:58px;border-radius:50%;box-shadow:0 0 0 2px var(--himbeer);padding:2px;background:var(--porzellan)}
+.ig-raster{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:1.3rem}
+.ig-kachel{aspect-ratio:4/5;display:grid;place-items:center;padding:.45rem;text-align:center;font-family:var(--display);font-size:.8rem;line-height:1.2;text-wrap:balance;overflow:hidden}
+.ig-profil-hinweis{margin-top:var(--s3);font-size:var(--gr-klein);color:var(--aubergine-weich);max-width:390px}
+
+/* Beiträge */
+.ig-posts{display:flex;flex-wrap:wrap;gap:clamp(1.5rem,1rem + 2vw,2.5rem)}
+.ig-fig{margin:0;--z:.4;width:calc(1080px * var(--z))}
+@media (max-width:560px){.ig-fig{--z:.3}}
+.ig-rahmen{width:calc(1080px * var(--z));height:calc(1350px * var(--z));overflow:hidden;box-shadow:var(--schatten-2);border-radius:3px}
+.post{width:1080px;height:1350px;transform:scale(var(--z));transform-origin:0 0;position:relative;display:flex;flex-direction:column;
+  padding:104px 96px 88px;background-size:300px 300px;overflow:hidden}
+.post__gross{font-family:var(--display);font-size:128px;line-height:1.02;letter-spacing:-.012em;text-wrap:balance;position:relative;z-index:2}
+.post__gross.mittel{font-size:96px;line-height:1.08}
+.post__text{font-size:44px;line-height:1.38;margin-top:44px;color:var(--tuch-tinte-2);max-width:21em;font-weight:500;position:relative;z-index:2}
+.post__text strong{color:var(--tuch-tinte)}
+.post__teller{position:absolute;pointer-events:none;z-index:1;filter:drop-shadow(0 30px 28px rgba(var(--schatten-rgb),.45))}
+.post__fuss{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;font-size:34px;font-weight:600;position:relative;z-index:2}
+.post__fuss b{font-family:var(--display);font-weight:400;font-size:48px;display:block;line-height:1.05}
+.post__karte{position:relative;background:var(--porzellan);color:var(--aubergine);padding:50px 44px 26px;border-radius:12px 12px 6px 6px;
+  box-shadow:0 6px 12px rgba(var(--schatten-rgb),.22),0 36px 50px -22px rgba(var(--schatten-rgb),.55);transform:rotate(-2deg);font-family:var(--display);font-size:50px;line-height:1.1;color:var(--himbeer-tief)}
+.post__karte::before{content:"";position:absolute;inset:0 0 auto;height:24px;border-radius:12px 12px 0 0;background:linear-gradient(#EFDDE1,#F7EAEC);border-bottom:3px solid rgba(142,26,59,.42)}
+.post__karte small{display:block;font-family:var(--text);font-size:28px;font-weight:700;color:var(--aubergine);margin-top:8px}
+.post__zitat{background:var(--porzellan);color:var(--aubergine);padding:68px 56px 44px;border-radius:12px 12px 6px 6px;position:relative;z-index:2;transform:rotate(1.2deg);
+  box-shadow:0 6px 12px rgba(var(--schatten-rgb),.22),0 36px 50px -22px rgba(var(--schatten-rgb),.55);font-size:46px;line-height:1.3;font-weight:600;margin-top:56px}
+.post__zitat::before{content:"";position:absolute;inset:0 0 auto;height:24px;border-radius:12px 12px 0 0;background:#F2E3E6;border-bottom:3px solid rgba(142,26,59,.35)}
+.post__zitat em{font-style:normal;font-family:var(--display);color:var(--himbeer-tief)}
+.ig-unter{margin-top:var(--s3);font-size:var(--gr-klein);line-height:1.5;max-width:calc(1080px * var(--z))}
+.ig-unter b{display:block;font-size:.8125rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.15rem}
+.ig-unter .platzhalter{font-size:.85em}
+.ig-fuss{padding-block:var(--s6)}
+.ig-fuss p{font-size:var(--gr-klein);color:var(--tuch-tinte-2)}
+
+/* Ab 64rem: links Profil (Handybreite), rechts die drei Beiträge nebeneinander */
+@media (min-width:64rem){
+  .ig-flaeche{grid-template-columns:minmax(0,390px) minmax(0,1fr);column-gap:clamp(1.5rem,1rem + 2vw,3rem)}
+  .ig-posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.75rem,.4rem + 1vw,1.5rem);align-items:start}
+  .ig-fig{width:auto;min-width:0;container-type:inline-size}
+  .ig-fig>*{--z:.3}
+  @supports (scale:tan(atan2(1px,1px))){.ig-fig>*{--z:tan(atan2(100cqw,1080px))}}
+  .ig-rahmen{width:100%;height:calc(1350px * var(--z))}
+  .ig-unter{max-width:none}
+}

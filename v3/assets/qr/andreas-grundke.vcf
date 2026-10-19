@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Grundke;Andreas;;;
+FN:Andreas Grundke
+ORG:Grundke IT-Service
+TEL;TYPE=CELL:+491782584438
+EMAIL:info@grundke-it.de
+URL:https://grundke-it.de
+ADR;TYPE=WORK:;;Beethovenring 16;Grasbrunn;;85630;Deutschland
+END:VCARD

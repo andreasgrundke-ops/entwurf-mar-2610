@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visitenkarte · Entwurf v3 · Marion</title>
+<meta name="description" content="Druckentwurf v3 „Am Küchentisch“: Visitenkarte 85 × 55 mm für Marion, Familien- und Paarberatung.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#B8254E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23B8254E'/%3E%3Ccircle cx='16' cy='16' r='11' fill='%23FFFCFB'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%232B6CB0' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='16' r='2.4' fill='%23F3B33D'/%3E%3C/svg%3E">
+<link rel="preload" href="../assets/fonts/caprasimo/caprasimo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/figtree-static/figtree-druck-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/site.css">
+<link rel="stylesheet" href="visitenkarte.css">
+<script src="../flyer/druck-vektor.js" defer></script>
+</head>
+<body class="vk">
+
+<header class="vk-leiste">
+  <div>
+    <h1>Visitenkarte · 85 × 55 mm</h1>
+    <p>Vorder- und Rückseite vergrößert. Die Druckausgabe (PDF) hat zwei Seiten in Originalgröße 91 × 61 mm, also mit 3 mm Beschnitt rundum.</p>
+  </div>
+  <div class="vk-tasten">
+    <button class="knopf" type="button" id="drucken">Drucken / als PDF</button>
+    <a class="vk-zurueck" href="../index.html">Zur Website v3</a>
+  </div>
+</header>
+
+<p class="vk-legende" aria-hidden="true"><span><i></i>Endschnitt 85 × 55 mm</span><span><i class="sicher"></i>Sicherheitsabstand 4 mm</span></p>
+
+<main class="vk-buehne" id="buehne">
+  <section class="vk-ansicht" aria-label="Vorderseite">
+    <h2 class="vk-ansicht__titel">Vorderseite</h2>
+    <div class="vk-zoom">
+      <div class="vk-karte vk-vorne tuch tuch-himbeer">
+        <img class="vk-teller" src="../assets/svg/teller-familienstreit.svg" alt="" width="240" height="240">
+        <img class="vk-tasse" src="../assets/svg/tasse-kobalt.svg" alt="" width="170" height="170">
+        <div class="vk-text">
+          <div>
+            <p class="vk-name">Marion</p>
+            <p class="vk-was">Familien- &amp; Paarberatung</p>
+          </div>
+          <p class="vk-satz">Komm, setz dich. <span>Wir reden in Ruhe drüber.</span></p>
+        </div>
+        <span class="vk-schnitt" aria-hidden="true"></span><span class="vk-sicher" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="vk-ansicht" aria-label="Rückseite">
+    <h2 class="vk-ansicht__titel">Rückseite</h2>
+    <div class="vk-zoom">
+      <div class="vk-karte vk-hinten tuch tuch-rose">
+        <img class="vk-tasse" src="../assets/svg/tasse-senf.svg" alt="" width="170" height="170">
+        <div class="vk-text">
+          <p class="vk-wer"><b>Marion <span class="platzhalter">[NACHNAME]</span></b><span>in Weiterbildung zur Systemischen Beraterin</span></p>
+          <ul class="vk-kontakt">
+            <li><b>Telefon</b><span class="platzhalter">[TELEFON]</span></li>
+            <li><b>E-Mail</b><span class="platzhalter">[E-MAIL]</span></li>
+            <li><b>Web</b><span class="platzhalter">[WEBADRESSE]</span></li>
+            <li><b>Wo</b><span>in <span class="platzhalter">[ORT]</span> und online</span></li>
+          </ul>
+        </div>
+        <span class="vk-saum" aria-hidden="true"></span>
+        <span class="vk-schnitt" aria-hidden="true"></span><span class="vk-sicher" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<p class="vk-entwurf">Entwurf / Mockup · Gestaltung: Grundke IT-Service · v3.0.1 · 19.10.2026</p>
+
+<script>
+/* Bildschirm: Karten so groß wie möglich, ohne seitliches Scrollen */
+(function(){
+  var KARTE=91*96/25.4, LUECKE=40;
+  function einpassen(){
+    var frei=Math.min(1148,document.documentElement.clientWidth-(window.innerWidth<600?32:48));
+    var nebeneinander=(frei-LUECKE)/2/KARTE;
+    var z=nebeneinander>=1.4?nebeneinander:frei/KARTE;
+    document.querySelectorAll(".vk-zoom").forEach(function(e){e.style.setProperty("--z",Math.min(2.6,z).toFixed(4))});
+  }
+  einpassen();window.addEventListener("resize",einpassen);
+  document.getElementById("drucken").addEventListener("click",function(){window.print()});
+})();
+</script>
+</body>
+</html>

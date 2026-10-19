@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Konzept und Fragen an dich · Entwurf v3 für Marion</title>
+<meta name="description" content="Das Konzept hinter dem Entwurf „Am Küchentisch“ in einfachen Worten, die technische Umsetzung und die offenen Fragen an Marion.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0c4da2">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230c4da2'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='%2326bdef' font-family='Arial' font-weight='bold'>G</text></svg>">
+<link rel="stylesheet" href="../css/hub.css">
+<link rel="stylesheet" href="../css/konzept.css">
+</head>
+<body>
+<header class="top"><div class="wrap"><img src="../../assets/img/logo-grundke-it.png" alt="Grundke IT-Service" width="132" height="44"><a class="btn zwei" href="../hub/">Zurück zur Übersicht</a></div></header>
+<main class="wrap">
+
+  <section class="intro" aria-labelledby="k-titel" style="grid-template-columns:1fr">
+    <div>
+      <h1 id="k-titel">Warum der Entwurf so aussieht, wie er aussieht</h1>
+      <p>Hier erkläre ich dir in einfachen Worten, was hinter „Am Küchentisch“ steckt, was wir uns bei anderen Seiten abgeschaut haben und wie die Website später technisch läuft. Ganz unten stehen meine Fragen an dich. Du musst nichts davon auswendig wissen, lies einfach in Ruhe rein.</p>
+      <ul class="toc" aria-label="Auf dieser Seite">
+        <li><a href="#idee">Die Idee</a></li>
+        <li><a href="#andere">Was wir besser machen</a></li>
+        <li><a href="#drin">Was ist drin</a></li>
+        <li><a href="#technik">Technik</a></li>
+        <li><a href="#fragen">Fragen an dich</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- a) Idee -->
+  <section class="kap" id="idee" aria-labelledby="h-idee">
+    <h2 id="h-idee">Die Idee: Am Küchentisch</h2>
+    <div class="idee">
+      <div class="text">
+        <p>Die meisten schwierigen Gespräche in einer Familie passieren nicht im Wohnzimmer, sondern am Küchentisch. Dort wird gestritten, geschwiegen, getröstet und am Ende doch wieder zusammen gegessen.</p>
+        <p>Du bist eine herzliche Gastgeberin mit Humor, und du holst Menschen gern an deinen Tisch. Genau das soll die Seite zeigen. Wer zu dir kommt, soll sich eingeladen fühlen und nicht in eine Praxis bestellt.</p>
+        <p>Deshalb ist jede Seite wie ein gedeckter Tisch. Oben liegt ein Tischtuch, darauf stehen Teller und Tassen, und an einem Platz steht eine Tischkarte mit „Dein Platz“. Das Erstgespräch heißt auf der Seite „Nimm dir einen Platz“.</p>
+      </div>
+      <figure>
+        <img src="../assets/svg/tisch-hero.svg" alt="Gezeichneter Tisch von oben auf himbeerrotem Tuch: bemalte Teller, zwei Tassen und ein freier Platz mit Tischkarte" width="900" height="820" loading="lazy">
+        <figcaption>Der gedeckte Tisch von der Startseite, selbst gezeichnet.</figcaption>
+      </figure>
+    </div>
+
+    <div class="zutaten">
+      <div class="zutat">
+        <h3>Farben wie Tischtücher</h3>
+        <p>Jeder Abschnitt ist ein eigenes Tuch in einer kräftigen Farbe: Himbeere, Tannengrün, Senfgelb, Kobaltblau und Rosé. Für das Thema Trennung gibt es ein ruhigeres Pflaumenrot, weil dort etwas zu Ende geht.</p>
+        <ul class="farben" aria-label="Die Tuchfarben">
+          <li><span style="background:#B8254E"></span>Himbeere</li>
+          <li><span style="background:#1F5C4A"></span>Tanne</li>
+          <li><span style="background:#F3B33D"></span>Senf</li>
+          <li><span style="background:#2B6CB0"></span>Kobalt</li>
+          <li><span style="background:#E9C6C9"></span>Rosé</li>
+          <li><span style="background:#6B2D57"></span>Pflaume</li>
+        </ul>
+      </div>
+      <div class="zutat">
+        <h3>Zwei Schriften</h3>
+        <p>Für Überschriften eine runde, kräftige Schrift, die an eine Wirtshaustafel erinnert. Für den Text eine klare, gut lesbare Schrift, auch abends am Handy.</p>
+        <p class="schrift-probe">Komm, setz dich.<small>Wir reden in Ruhe drüber.</small></p>
+      </div>
+      <div class="zutat">
+        <h3>Ein Teller je Anliegen</h3>
+        <p>Jedes Thema hat einen eigenen bemalten Teller. So findet man sein Anliegen mit einem Blick, ohne lange Listen zu lesen.</p>
+        <div class="teller-reihe" aria-hidden="true"><img src="../assets/svg/teller-familienstreit.svg" alt="" width="44" height="44"><img src="../assets/svg/teller-kind-teenager.svg" alt="" width="44" height="44"><img src="../assets/svg/teller-partnerschaft.svg" alt="" width="44" height="44"><img src="../assets/svg/teller-trennung-patchwork.svg" alt="" width="44" height="44"><img src="../assets/svg/teller-ueberforderung.svg" alt="" width="44" height="44"><img src="../assets/svg/teller-lebensuebergaenge.svg" alt="" width="44" height="44"></div>
+      </div>
+      <div class="zutat">
+        <h3>Die Tischkarte als Knopf</h3>
+        <p>Der wichtigste Knopf sieht aus wie ein gefaltetes Kärtchen. Er führt immer zum Erstgespräch, egal wo man auf der Seite gerade ist.</p>
+        <span class="karte-probe">Nimm dir einen Platz</span>
+      </div>
+    </div>
+
+    <div class="blatt">
+      <h3>Warum es anders aussieht als die meisten Beratungsseiten</h3>
+      <p>Viele Beratungsseiten sehen sich sehr ähnlich: heller Cremeton, zartes Salbeigrün, ein Foto von Steinen oder Händen aus einer Bilddatenbank. Das wirkt ruhig, aber auch austauschbar. Man weiß danach nicht mehr, auf welcher Seite man war. Dein Tisch ist bunt, warm und ein bisschen verschmitzt. Er passt zu dir, und man erinnert sich an ihn.</p>
+    </div>
+  </section>
+
+  <!-- b) Andere Seiten -->
+  <section class="kap" id="andere" aria-labelledby="h-andere">
+    <h2 id="h-andere">Was wir bei anderen Beraterinnen gesehen haben, und was wir besser machen</h2>
+    <p class="lead">Wir haben uns elf Seiten von Beraterinnen und Beratern im Raum München angesehen. Namen nennen wir hier bewusst nicht. Diese Schwächen kamen immer wieder vor:</p>
+    <ul class="vergl">
+      <li><div class="oft"><span class="k">Oft gesehen</span>Die Preise fehlen oder sind gut versteckt.</div><div class="hier"><span class="k">In deinem Entwurf</span>Preise und Dauer stehen offen auf der Startseite, als kleine Speisekarte: „Alle Preise offen, vorab besprochen“.</div></li>
+      <li><div class="oft"><span class="k">Oft gesehen</span>Unklar, wie das erste Gespräch abläuft, wie lange es dauert und ob es etwas kostet.</div><div class="hier"><span class="k">In deinem Entwurf</span>Ein kurzer Fahrplan in drei Schritten: Du meldest dich, wir reden ein erstes Mal, du entscheidest, wie es weitergeht. Dazu Dauer und wie schnell du antwortest.</div></li>
+      <li><div class="oft"><span class="k">Oft gesehen</span>Viele Fachwörter, die niemand erklärt.</div><div class="hier"><span class="k">In deinem Entwurf</span>Jede Seite beginnt mit einem Satz, wie ihn Ratsuchende selbst sagen würden, etwa „Jedes Gespräch endet im selben Streit.“</div></li>
+      <li><div class="oft"><span class="k">Oft gesehen</span>Die Person dahinter ist kaum zu sehen, oft nur ein kleines Foto weit unten.</div><div class="hier"><span class="k">In deinem Entwurf</span>Du bist die Gastgeberin. Ein eigener Abschnitt „Ich bin Marion.“ erzählt, wer du bist und warum du das machst.</div></li>
+      <li><div class="oft"><span class="k">Oft gesehen</span>Technische Fehler: kaputte Links, leere Platzhalter beim Cookie-Hinweis, Tippfehler.</div><div class="hier"><span class="k">In deinem Entwurf</span>Jede Seite wird vor dem Start auf Handy und Rechner durchgeklickt und geprüft.</div></li>
+      <li><div class="oft"><span class="k">Oft gesehen</span>Lange Themenlisten ohne Ordnung.</div><div class="hier"><span class="k">In deinem Entwurf</span>Sechs Anliegen, nach Lebenslage sortiert, jedes mit eigenem Teller und eigener Seite.</div></li>
+    </ul>
+
+    <div class="blatt">
+      <h3>Was Ratsuchende in Bewertungen loben</h3>
+      <p>In den Bewertungen anderer Beraterinnen tauchen immer wieder dieselben Dinge auf. Die Seite soll genau diese Eindrücke schon vor dem ersten Gespräch vermitteln.</p>
+    </div>
+    <div class="lob">
+      <div class="blatt"><h3>Einfühlung</h3><p>Die Texte holen Menschen bei ihrem Alltag ab, mit Szenen wie vom eigenen Esstisch. Wer liest, merkt: Sie versteht, worum es bei uns geht.</p></div>
+      <div class="blatt"><h3>Menschlich und zugleich professionell</h3><p>Herzlicher Ton, aber klare Angaben zu Stand, Ablauf und Grenzen. Dass du in Weiterbildung bist, steht ehrlich da.</p></div>
+      <div class="blatt"><h3>Humor und Leichtigkeit</h3><p>Der bunte Tisch und kleine Augenzwinkern in den Texten zeigen, dass ein schweres Thema nicht schwer erzählt werden muss.</p></div>
+      <div class="blatt"><h3>Klarheit</h3><p>Was kostet es, wie lange dauert es, wie schnell kommt eine Antwort? Diese Fragen werden beantwortet, bevor jemand sie stellen muss.</p></div>
+    </div>
+  </section>
+
+  <!-- c) Was ist drin -->
+  <section class="kap" id="drin" aria-labelledby="h-drin">
+    <h2 id="h-drin">Was ist drin</h2>
+    <p class="lead">Alles lässt sich anklicken und ausprobieren. Auf dem Handy öffnest du am besten einfach die Website selbst.</p>
+    <ul class="drin">
+      <li><a href="../index.html"><strong>Website</strong><span>Die Startseite mit dem gedeckten Tisch.</span></a></li>
+      <li><a href="../anliegen/familienstreit.html"><strong>Sechs Anliegen-Seiten</strong><span>Streit in der Familie, Kind und Teenager, Partnerschaft, Trennung und Patchwork, Überforderung, Lebensübergänge.</span></a></li>
+      <li><a href="../mobile/index.html"><strong>Handy-Ansicht</strong><span>Die Website in Handybreite zum Durchklicken am Rechner.</span></a></li>
+      <li><a href="../flyer/"><strong>Flyer</strong><span>Zum Falten und Auslegen, zum Beispiel beim Kinderarzt.</span></a></li>
+      <li><a href="../visitenkarte/"><strong>Visitenkarte</strong><span>Vorne dein Name, hinten Tischtuch und Teller.</span></a></li>
+      <li><a href="../instagram/"><strong>Instagram-Skizze</strong><span>Freiwillig: ein Profil und drei Beispiel-Beiträge.</span></a></li>
+    </ul>
+  </section>
+
+  <!-- d) Technik -->
+  <section class="kap" id="technik" aria-labelledby="h-technik">
+    <h2 id="h-technik">So wird es technisch umgesetzt, einfach erklärt</h2>
+    <p class="lead">Du musst dich um die Technik nicht kümmern. Damit du trotzdem weißt, was passiert, hier das Wichtigste.</p>
+    <ul class="technik">
+      <li><h3>Einfach und schnell</h3><p>Die Seite ist schlicht gebaut und lädt deshalb schnell. Es gibt kein Baukasten-Abo, das jeden Monat kostet, und keine Werbe-Tracker, die Besucher verfolgen.</p></li>
+      <li><h3>Schriften vom eigenen Server</h3><p>Die Schriften liegen direkt bei der Website. Es wird nichts bei Google nachgeladen, und so gehen keine Daten deiner Besucher dorthin.</p></li>
+      <li><h3>Handy und Rechner</h3><p>Die Seite passt sich der Bildschirmgröße an. Die meisten werden dich abends auf dem Handy finden, darauf ist sie zuerst ausgelegt.</p></li>
+      <li><h3>Kontaktformular</h3><p>Das Formular schicken wir später über einen Anbieter aus Deutschland oder der EU. Mit ihm gibt es einen Vertrag, der regelt, wie er mit den Nachrichten umgehen darf (Auftragsverarbeitung).</p></li>
+      <li><h3>Eigene Adresse und E-Mail</h3><p>Du bekommst eine eigene Internetadresse (Domain), etwa [deine-adresse].de, und eine passende E-Mail-Adresse dazu.</p></li>
+      <li><h3>Gefunden werden in der Umgebung</h3><p>Ein Google-Unternehmensprofil sorgt dafür, dass dich Menschen bei der Suche in deiner Gegend und auf der Karte finden.</p></li>
+      <li><h3>Gefunden werden über Fragen</h3><p>Jedes Anliegen hat eine eigene Seite mit klaren Antworten. So finden dich Google und auch Sprachassistenten oder Chat-Programme, wenn jemand etwa fragt: „Wer hilft bei Streit mit dem Teenager?“</p></li>
+      <li><h3>Impressum und Datenschutz</h3><p>Beides muss auf jede Website. Vor dem Start lassen wir die Texte prüfen, damit sie zu deiner Tätigkeit passen.</p></li>
+    </ul>
+    <div class="mockup-hinweis">
+      <p><b>Was du gerade siehst, ist nur eine Vorschau.</b> Sie ist für Suchmaschinen gesperrt und taucht nicht bei Google auf. Das Kontaktformular verschickt nichts. Alles in eckigen Klammern, zum Beispiel [ORT], ist ein Platzhalter für deine echten Angaben.</p>
+    </div>
+  </section>
+
+  <!-- e) Fragen -->
+  <section class="kap" id="fragen" aria-labelledby="h-fragen">
+    <h2 id="h-fragen">Fragen an dich, Marion</h2>
+    <p class="lead">Klick eine Frage an, darunter steht kurz, warum ich das wissen möchte. Du musst nicht alles auf einmal beantworten.</p>
+    <div class="fragen">
+      <details><summary>Soll dein Nachname auf der Seite stehen?</summary><p>Mit vollem Namen wirkt die Seite vertrauenswürdiger, und im Impressum muss er ohnehin stehen. Auf der Startseite können wir aber auch nur „Marion“ schreiben.</p></details>
+      <details><summary>Wie möchtest du angesprochen werden: Marion oder Maru?</summary><p>Der Name steht überall, auf der Seite, dem Flyer und der Visitenkarte. Er sollte sich für dich richtig anfühlen.</p></details>
+      <details><summary>Wo finden die Gespräche statt?</summary><p>Gibt es einen Raum, berätst du nur online, oder kommst du auch zu den Leuten nach Hause? Davon hängen Adresse, Karte und der Text zum Ablauf ab.</p></details>
+      <details><summary>In welcher Gegend möchtest du arbeiten?</summary><p>Damit dich die richtigen Menschen finden, nennen wir die Orte, aus denen sie kommen. Das ist für die Suche in der Umgebung wichtig.</p></details>
+      <details><summary>Was kostet eine Sitzung, wie lange dauert sie, und ist das Erstgespräch kostenlos?</summary><p>Offene Preise sind einer der größten Unterschiede zu anderen Seiten. Viele Ratsuchende melden sich erst, wenn sie wissen, worauf sie sich einlassen.</p></details>
+      <details><summary>Wann schließt du deine Weiterbildung ab, und bei welchem Institut? Möchtest du es nennen?</summary><p>Auf der Seite steht ehrlich „in Weiterbildung“. Mit Institut und Abschlussdatum wird das greifbarer und schafft Vertrauen.</p></details>
+      <details><summary>Gibt es Fotos von dir, oder sollen wir ein kleines Fotoshooting machen?</summary><p>Menschen möchten sehen, wem sie sich anvertrauen. Ein oder zwei natürliche Fotos reichen völlig.</p></details>
+      <details><summary>Wie möchtest du rüberkommen? Beschreib es in drei Worten.</summary><p>Damit treffen die Texte deinen Ton. Ein Beispiel wäre „herzlich, ehrlich, mit Humor“, aber nimm deine eigenen Worte.</p></details>
+      <details><summary>Was soll niemand über dich lesen?</summary><p>Damit wir nichts schreiben, was dir unangenehm ist. Das bleibt natürlich unter uns.</p></details>
+      <details><summary>Welche Menschen möchtest du begleiten, und welche lieber nicht?</summary><p>Die Seite spricht dann gezielt die Richtigen an. Wo du nicht helfen kannst, verweisen wir freundlich weiter.</p></details>
+      <details><summary>Gefallen dir die Farben und der Tisch? Was fehlt, was ist zu viel?</summary><p>Jetzt lässt sich noch alles leicht ändern. Sag ruhig ehrlich, wenn dir etwas nicht gefällt.</p></details>
+      <details><summary>Möchtest du Instagram für deine Beratung nutzen?</summary><p>Dein Auftritt dort wirkt herzlich und humorvoll, das passt gut. Ob du ein eigenes Profil für die Beratung möchtest oder lieber gar keins, entscheidest du.</p></details>
+      <details><summary>Hast du eine Wunschadresse (Domain) und eine Wunsch-E-Mail?</summary><p>Dann schaue ich, ob sie noch frei sind, und reserviere sie, bevor sie jemand anderes nimmt.</p></details>
+      <details><summary>Wann bist du telefonisch erreichbar?</summary><p>Diese Zeiten schreiben wir auf die Seite, damit niemand ins Leere anruft.</p></details>
+      <details><summary>Gibt es eigene Sätze oder Geschichten, die auf die Seite sollen?</summary><p>Deine eigenen Worte machen die Seite persönlich. Ein Satz, den du oft sagst, oder warum du diesen Weg gehst, ist genau richtig.</p></details>
+      <details><summary>Magst du mir deinen Text einsprechen?</summary><p>Schick mir gern eine Sprachnachricht. Ich mache daraus einen fertigen Text und zeige ihn dir, bevor er auf die Seite kommt.</p></details>
+    </div>
+    <div class="antwort">
+      <p><b>Antworte einfach per WhatsApp oder ruf mich an.</b> Stichworte reichen, und eine Sprachnachricht ist genauso gut.</p>
+      <p>Andreas Grundke · <a href="tel:+491782584438">0178 2584438</a> · <a href="mailto:info@grundke-it.de">info@grundke-it.de</a></p>
+    </div>
+  </section>
+
+  <section class="qr-kasten" aria-labelledby="qr-titel">
+    <h2 id="qr-titel">So erreichst du mich</h2>
+    <p>Halte die Handykamera auf einen Code. Auf dem Handy kannst du auch direkt auf die Knöpfe darunter tippen.</p>
+    <ul class="qr-reihe">
+      <li><img src="../assets/qr/qr-anrufen.svg" alt="QR-Code: Andreas Grundke anrufen, 0178 2584438" width="156" height="156"><strong>Anrufen</strong><small>0178 2584438</small><a href="tel:+491782584438">Jetzt anrufen</a></li>
+      <li><img src="../assets/qr/qr-kontakt.svg" alt="QR-Code: Kontakt von Andreas Grundke im Telefonbuch speichern" width="156" height="156"><strong>Kontakt speichern</strong><small>Landet direkt im Telefonbuch</small><a href="../assets/qr/andreas-grundke.vcf" download>Kontakt laden</a></li>
+      <li><img src="../assets/qr/qr-tree.svg" alt="QR-Code: Linkseite grundke-it.de/tree" width="156" height="156"><strong>grundke-it.de/tree</strong><small>Alle Wege zu mir auf einer Seite</small><a href="https://grundke-it.de/tree">Seite öffnen</a></li>
+    </ul>
+  </section>
+
+  <p class="ki">Hinweis: Texte und Gestaltung dieses Entwurfs sind mit Unterstützung von KI entstanden und von mir geprüft. Die Zeichnungen sind selbst erstellt, es gibt keine KI-Bilder.</p>
+</main>
+<footer>
+  <p>CI 2026.01 · Grundke IT-Service · Entwurf für Marion, Weitergabe nur nach Absprache</p>
+  <p>Entwurf / Mockup · Gestaltung: Grundke IT-Service · v3.0.2 · 19.10.2026</p>
+</footer>
+</body>
+</html>

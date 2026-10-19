@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Marion · Entwurf v3 „Am Küchentisch“ · Visitenkarte
+   v3.0.1 · 19.10.2026
+   --------------------------------------------------------------------------
+   Baut auf ../css/site.css auf (Schriften, Farb-Tokens, Tücher, Platzhalter).
+   Klassen mit Präfix vk-.
+   Endformat 85 × 55 mm, rundum 3 mm Beschnitt = Druckseite 91 × 61 mm.
+   Satzspiegel: 4 mm vom Endschnitt (= 7 mm vom Seitenrand).
+   Schrift nie unter 8 pt. Hilfslinien, Leiste, Entwurfshinweis nur am Bildschirm.
+   ========================================================================== */
+
+@page{size:91mm 61mm;margin:0}
+
+/* Bildschirm-Rahmen */
+body.vk{background:#E9D3D8;color:var(--aubergine);font-size:1rem}
+.vk-leiste{max-width:1180px;margin:0 auto;padding:1.5rem 1rem 1.25rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:flex-end;justify-content:space-between}
+.vk-leiste h1{font-family:var(--display);font-size:clamp(1.6rem,1.2rem + 1.4vw,2.2rem);line-height:1.1;color:var(--himbeer-tief)}
+.vk-leiste p{margin-top:.5rem;max-width:62ch;font-size:.95rem;line-height:1.5;color:var(--aubergine-weich)}
+.vk-tasten{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center}
+.vk-zurueck{font-weight:700;font-size:.95rem;color:var(--himbeer-tief)}
+.vk-buehne{max-width:1180px;margin:0 auto;padding:0 1rem 1rem;display:flex;flex-wrap:wrap;gap:2rem 2.5rem;justify-content:center}
+.vk-ansicht{display:flex;flex-direction:column;gap:.5rem;align-items:center}
+.vk-ansicht__titel{font:700 .95rem/1.3 var(--text);color:var(--aubergine-weich)}
+.vk-zoom{--z:2.4;zoom:var(--z)}
+.vk-entwurf{max-width:1180px;margin:0 auto;padding:1.5rem 1rem 2.5rem;font-size:.875rem;color:var(--aubergine-weich)}
+.vk-legende{max-width:1180px;margin:0 auto;padding:0 1rem;display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-size:.875rem;color:var(--aubergine-weich)}
+.vk-legende span{display:inline-flex;align-items:center;gap:.45rem}
+.vk-legende i{display:inline-block;width:1.6rem;height:0;border-top:2px dashed currentColor}
+.vk-legende i.sicher{border-top-style:dotted;color:#2B6CB0}
+
+/* Karte inkl. Beschnitt */
+.vk-karte{position:relative;width:91mm;height:61mm;overflow:hidden;background-size:28mm 28mm;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:0 1.2mm 3.5mm -1mm rgba(59,7,22,.4)}
+.vk-schnitt{position:absolute;inset:3mm;z-index:20;pointer-events:none;outline:.2mm dashed rgba(255,255,255,.95);box-shadow:0 0 0 .15mm rgba(42,30,34,.5)}
+.vk-sicher{position:absolute;inset:7mm;z-index:20;pointer-events:none;outline:.2mm dotted rgba(43,108,176,.9)}
+
+/* Vorderseite: himbeerrotes Tischtuch, angeschnittener Teller, Name */
+.vk-vorne .vk-teller{position:absolute;right:-17mm;top:-6mm;width:58mm;height:58mm;transform:rotate(-14deg);max-width:none}
+.vk-vorne .vk-tasse{position:absolute;right:-6mm;bottom:-9mm;width:27mm;height:27mm;transform:rotate(18deg);max-width:none}
+.vk-vorne .vk-text{position:absolute;left:7mm;bottom:7mm;top:7mm;width:51mm;display:flex;flex-direction:column;justify-content:space-between}
+.vk-name{font-family:var(--display);font-weight:400;font-size:24pt;line-height:.95;color:#FFF5F7;letter-spacing:-.01em}
+.vk-was{margin-top:1.6mm;font-weight:700;font-size:8.5pt;line-height:1.3;color:var(--tuch-tinte-2)}
+.vk-satz{font-family:var(--display);font-weight:400;font-size:9.5pt;line-height:1.12;color:#FFF5F7}
+.vk-satz span{display:block;color:#F9CB6B}
+
+/* Rückseite: Kontakt auf Rosé-Leinen */
+.vk-hinten{color:var(--aubergine)}
+.vk-hinten .vk-text{position:absolute;inset:7mm 7mm 7mm 7mm;display:flex;flex-direction:column}
+.vk-hinten .vk-wer b{display:block;font-family:var(--display);font-weight:400;font-size:13pt;line-height:1.05;color:var(--himbeer-tief)}
+.vk-hinten .vk-wer>span{display:block;margin-top:.9mm;font-size:8pt;line-height:1.3;font-weight:600;color:var(--aubergine-weich)}
+.vk-kontakt{margin-top:auto;display:grid;gap:.75mm;font-size:8pt;line-height:1.3}
+.vk-kontakt li{display:grid;grid-template-columns:13mm minmax(0,1fr);column-gap:1.2mm;align-items:baseline}
+.vk-kontakt li b{font-weight:750;color:var(--himbeer-tief)}
+.vk-hinten .platzhalter{font-size:1em;padding:0 .25em}
+.vk-hinten .vk-tasse{position:absolute;right:-7mm;top:-8mm;width:26mm;height:26mm;transform:rotate(-12deg);max-width:none}
+.vk-hinten .vk-saum{position:absolute;left:0;right:0;bottom:0;height:6.6mm;background:url(../assets/svg/borte.svg) 0 0/3mm 3mm;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.vk-hinten .vk-text{bottom:9.4mm}
+.vk-kontakt .platzhalter{justify-self:start}
+
+
+@media screen and (max-width:600px){.vk-leiste,.vk-buehne,.vk-entwurf,.vk-legende{padding-inline:16px}}
+
+/* Druck: zwei Seiten 91 × 61 mm, Vorder- und Rückseite */
+@media print{
+  html,body.vk{background:#fff;margin:0;padding:0}
+  .vk-leiste,.vk-entwurf,.vk-legende,.vk-ansicht__titel,.vk-schnitt,.vk-sicher{display:none!important}
+  .vk-buehne{display:block;padding:0;margin:0;max-width:none}
+  .vk-ansicht{display:block}
+  .vk-zoom{zoom:1!important}
+  .vk-karte{box-shadow:none;break-after:page}
+  .vk-ansicht:last-child .vk-karte{break-after:auto}
+}
+
+/* Druckschrift: Figtree als statische Schnitte (v3.0.1) ---------------------
+   Die variable Figtree aus site.css landet im PDF als Type3-Schrift. Für Flyer
+   und Visitenkarte deshalb feste Schnitte je benutzter Stärke, erzeugt mit
+   fontTools (varLib.instancer) aus Figtree[wght].ttf von Google Fonts, Lizenz
+   OFL 1.1 (../assets/fonts/figtree-static/OFL.txt). Chrome bettet sie als
+   TrueType ein. */
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:400;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-400.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:500;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-500.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:600;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-600.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:650;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-650.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:700;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-700.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:750;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-750.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:760;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-760.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:780;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-780.woff2) format("woff2")}
+body.vk{--text:"Figtree Druck","Figtree",ui-sans-serif,"Segoe UI",system-ui,sans-serif}
+
+/* Druckflächen als Vektor (v3.0.1, siehe ../flyer/druck-vektor.js) ----------
+   Im Druck: Tuch mit Gewebe und Karosaum als SVG statt gerasterter
+   Hintergrundkachel. Am Bildschirm bleibt die CSS-Gestaltung. */
+.druck-grund,.druck-karo{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+@media screen{.druck-grund,.druck-karo{display:none}}
+@media print{
+  .vk-karte.tuch{background:transparent none!important}
+  .vk-hinten .vk-saum{background:none!important;overflow:hidden}
+}

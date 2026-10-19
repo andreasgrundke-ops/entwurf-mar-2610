@@ -1,0 +1,256 @@
+/* ==========================================================================
+   Marion · Entwurf v3 „Am Küchentisch“ · Flyer A4 quer, Wickelfalz
+   v3.0.1 · 19.10.2026
+   --------------------------------------------------------------------------
+   Baut auf ../css/site.css auf (Schriften, Farb-Tokens, Tücher, Platzhalter).
+   Alle Klassen hier tragen das Präfix fl-, damit nichts mit der Website kollidiert.
+
+   Maße (Endformat 297 × 210 mm, rundum 3 mm Beschnitt = 303 × 216 mm):
+     Außen  Klappe 97 | Rückseite 100 | Titel 100
+     Innen  Anliegen 100 | Ablauf 100 | Klappe innen 97
+   Jeder Bogen liegt in Beschnitt-Koordinaten (0–303 × 0–216 mm).
+   Satzspiegel: 9 mm vom Endschnitt außen, 7 mm vom Falz.
+
+   Druck: Standard ist das Endformat 297 × 210 mm (@page).
+   Mit ?beschnitt in der Adresse oder dem Schalter in der Leiste werden
+   die Druckdaten 303 × 216 mm mit 3 mm Beschnitt ausgegeben.
+   Falzlinien, Schnittkante, Leiste und Entwurfshinweis nur am Bildschirm.
+   ========================================================================== */
+
+/* Seitengrößen ------------------------------------------------------------- */
+@page{size:297mm 210mm;margin:0}
+@page endformat{size:297mm 210mm;margin:0}
+@page beschnitt{size:303mm 216mm;margin:0}
+
+/* Bildschirm-Rahmen ---------------------------------------------------------- */
+body.fl{background:#E9D3D8;color:var(--aubergine);font-size:1rem}
+.fl-leiste{max-width:1180px;margin:0 auto;padding:1.5rem 1rem 1.25rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:flex-end;justify-content:space-between}
+.fl-leiste h1{font-family:var(--display);font-size:clamp(1.6rem,1.2rem + 1.4vw,2.2rem);line-height:1.1;color:var(--himbeer-tief)}
+.fl-leiste p{margin-top:.5rem;max-width:62ch;font-size:.95rem;line-height:1.5;color:var(--aubergine-weich)}
+.fl-tasten{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.fl-wahl{display:inline-flex;border:1.5px solid #B99BA2;border-radius:var(--r-feld);background:#fff;overflow:hidden}
+.fl-wahl label{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem .8rem;font-weight:650;font-size:.9rem;cursor:pointer;min-height:2.75rem}
+.fl-wahl label+label{border-left:1.5px solid #E2CDD2}
+.fl-wahl label:has(input:checked){background:var(--himbeer-hell);color:var(--himbeer-tief)}
+.fl-wahl label:has(input:focus-visible){outline:3px solid var(--himbeer-tief);outline-offset:-3px}
+.fl-wahl input{accent-color:var(--himbeer);margin:0}
+.fl-zurueck{font-weight:700;font-size:.95rem;color:var(--himbeer-tief)}
+
+.fl-stapel{--z:1;zoom:var(--z);width:303mm;margin:0 auto;padding-bottom:1rem}
+.fl-ansicht{margin:0 0 14mm}
+.fl-ansicht__titel{font:700 11pt/1.3 var(--text);color:var(--aubergine-weich);margin:0 0 3mm;display:flex;justify-content:space-between}
+.fl-ansicht__titel span:last-child{font-weight:500}
+
+/* Blatt = Druckseite. Bildschirm: mit Beschnitt und Schnittkante. */
+.fl-blatt{position:relative;width:303mm;height:216mm;overflow:hidden;background:#fff;
+  box-shadow:0 3mm 9mm -2mm rgba(59,7,22,.35)}
+.fl-bogen{position:relative;width:303mm;height:216mm}
+
+/* Hilfslinien (nur Bildschirm) */
+.fl-schnitt{position:absolute;inset:3mm;z-index:20;pointer-events:none;outline:.3mm dashed rgba(255,255,255,.85);box-shadow:0 0 0 .3mm rgba(42,30,34,.55)}
+.fl-falz{position:absolute;top:0;bottom:0;width:0;z-index:21;pointer-events:none;border-left:.35mm dashed rgba(255,255,255,.9);box-shadow:0 0 0 .2mm rgba(42,30,34,.35)}
+.fl-falz span{position:absolute;top:4mm;left:1.2mm;font:700 7pt/1 var(--text);letter-spacing:.04em;color:#fff;background:rgba(42,30,34,.7);padding:.6mm 1.1mm;border-radius:.6mm;white-space:nowrap}
+.fl-entwurf{max-width:1180px;margin:0 auto;padding:1rem 1rem 2.5rem;font-size:.875rem;color:var(--aubergine-weich)}
+
+/* Panels ---------------------------------------------------------------------
+   Grundmaße in Beschnitt-Koordinaten; --l/--r sind die Innenabstände links/rechts. */
+.fl-panel{position:absolute;top:0;height:216mm;overflow:hidden;
+  background-size:42mm 42mm;-webkit-print-color-adjust:exact;print-color-adjust:exact;
+  display:flex;flex-direction:column;padding:12mm var(--r,7mm) 12mm var(--l,7mm);
+  font-size:12pt;line-height:1.38}
+.fl-panel.tuch{background-size:42mm 42mm}
+/* Außen */
+.fl-p-klappe{left:0;width:100mm;--l:12mm;--r:7mm}
+.fl-p-rueck{left:100mm;width:100mm;--l:7mm;--r:7mm}
+.fl-p-titel{left:200mm;width:103mm;--l:7mm;--r:12mm}
+/* Innen */
+.fl-p-anliegen{left:0;width:103mm;--l:12mm;--r:7mm}
+.fl-p-ablauf{left:103mm;width:100mm;--l:7mm;--r:7mm}
+.fl-p-hinweis{left:203mm;width:100mm;--l:7mm;--r:12mm;padding:0}
+
+/* Grundschrift im Panel: nie unter 12 pt */
+:where(.fl-panel) :where(p,li){font-size:12pt;line-height:1.38}
+.fl-panel .platzhalter{font-size:1em;padding:0 .25em;border-radius:.6mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.fl-h2{font-family:var(--display);font-weight:400;font-size:20pt;line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+.fl-h3{font-family:var(--display);font-weight:400;font-size:15pt;line-height:1.1}
+.fl-zweit{color:var(--tuch-tinte-2)}
+
+/* Schatten im Druck: weiche, versetzte Verläufe statt Filter (bleiben Vektor) */
+.fl-gegenstand{position:relative;isolation:isolate}
+.fl-gegenstand::after{content:"";position:absolute;inset:6% -2% -7% 4%;z-index:-1;border-radius:inherit;
+  background:radial-gradient(closest-side,rgba(var(--schatten-rgb),.42),rgba(var(--schatten-rgb),.18) 62%,rgba(var(--schatten-rgb),0));
+  filter:none}
+
+/* ---- Außen 1: Klappe (Rosé) – Ich bin Marion ------------------------------ */
+.fl-p-klappe{justify-content:flex-start}
+.fl-polaroid{align-self:center;width:52mm;margin:4mm 0 8mm;padding:2.6mm 2.6mm 0;background:var(--porzellan);border-radius:.5mm;transform:rotate(-3.5deg);
+  box-shadow:0 .7mm 1.2mm rgba(96,30,44,.22),0 3mm 5mm -1.5mm rgba(96,30,44,.42)}
+.fl-polaroid__flaeche{aspect-ratio:4/5;display:grid;place-items:center;padding:2mm;text-align:center;
+  background:#F1D3D8 radial-gradient(circle at 50% 50%,#E3B2BA 0 .7mm,transparent .8mm) 0 0/4.6mm 4.6mm;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.fl-polaroid figcaption{font-family:var(--display);font-size:13pt;color:var(--himbeer-tief);text-align:center;padding:2mm 0 2.4mm}
+.fl-p-klappe .fl-h2{color:var(--himbeer-tief)}
+.fl-klappe__text{margin-top:3.5mm}
+.fl-klappe__text p+p{margin-top:2.6mm}
+.fl-klappe__satz{margin-top:auto;padding-top:4mm;border-top:.35mm dashed rgba(142,26,59,.4)}
+.fl-klappe__satz b{display:block;font-family:var(--display);font-weight:400;font-size:14pt;line-height:1.15;color:var(--himbeer-tief)}
+
+/* ---- Außen 2: Rückseite (Himbeer) – So erreichst du mich ------------------- */
+.fl-p-rueck .fl-h2{color:#FFF5F7}
+.fl-wer{margin-top:5mm}
+.fl-wer b{display:block;font-family:var(--display);font-weight:400;font-size:17pt;line-height:1.1;color:#FFF5F7}
+.fl-wer>span{display:block;margin-top:1mm;color:var(--tuch-tinte-2)}
+.fl-wege{margin-top:5mm}
+.fl-wege li{display:grid;grid-template-columns:19mm minmax(0,1fr);column-gap:2mm;padding:1.9mm 0;border-bottom:.3mm solid rgba(255,245,247,.28)}
+.fl-wege li:first-child{border-top:.3mm solid rgba(255,245,247,.28)}
+.fl-wege__lbl{font-weight:750;color:var(--tuch-tinte-2)}
+.fl-wege .platzhalter{justify-self:start;align-self:start}
+.fl-rueck__fuss{margin-top:auto;display:grid;grid-template-columns:minmax(0,1fr) 27mm;gap:4mm;align-items:end}
+.fl-erst{position:relative;background:var(--porzellan);color:var(--aubergine);padding:6mm 4mm 3.4mm;border-radius:1.2mm 1.2mm .6mm .6mm;transform:rotate(-1.6deg);
+  box-shadow:0 .6mm 1mm rgba(59,7,22,.25),0 3mm 5mm -1.4mm rgba(59,7,22,.5)}
+.fl-erst::before{content:"";position:absolute;inset:0 0 auto;height:3mm;border-radius:1.2mm 1.2mm 0 0;
+  background:linear-gradient(#EFDDE1,#F7EAEC);border-bottom:.4mm solid rgba(142,26,59,.42);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.fl-erst b{display:block;font-family:var(--display);font-weight:400;font-size:15pt;line-height:1.1;color:var(--himbeer-tief)}
+.fl-erst p{margin-top:1.4mm}
+.fl-qr{display:grid;place-items:center;text-align:center;aspect-ratio:1;background:var(--porzellan);color:var(--aubergine);border-radius:1mm;
+  outline:.4mm dashed rgba(42,30,34,.55);outline-offset:-1.6mm;font-weight:700;line-height:1.2;padding:2mm}
+.fl-qr span{font-size:12pt}
+
+/* ---- Außen 3: Titel (Himbeer) ---------------------------------------------- */
+.fl-p-titel{justify-content:flex-end}
+.fl-tisch{position:absolute;left:1mm;top:-19mm;width:142mm;max-width:none;height:auto;z-index:0;pointer-events:none;overflow:visible}
+.fl-titel__text{position:relative;z-index:1}
+.fl-titel__h{font-family:var(--display);font-weight:400;font-size:26pt;line-height:1.05;letter-spacing:-.012em;color:#FFF5F7;text-wrap:balance}
+.fl-titel__h span{display:block}
+.fl-titel__h .fl-nw{white-space:nowrap}
+.fl-titel__lead{margin-top:4mm;color:var(--tuch-tinte-2);max-width:72mm}
+.fl-marke{margin-top:7mm;padding-top:4mm;border-top:.35mm dashed rgba(255,245,247,.5)}
+.fl-marke b{display:block;font-family:var(--display);font-weight:400;font-size:21pt;line-height:1;color:#FFF5F7}
+.fl-marke span{display:block;margin-top:1.4mm;font-weight:650;color:var(--tuch-tinte-2)}
+
+/* ---- Innen 1: Anliegen als Teller (Tanne) ---------------------------------- */
+.fl-p-anliegen .fl-h2{color:#F3FBF7}
+.fl-p-anliegen .fl-einl{margin-top:2.6mm;color:var(--tuch-tinte-2)}
+.fl-teller{margin-top:5mm;display:grid;gap:3mm}
+.fl-teller li{display:grid;grid-template-columns:19mm minmax(0,1fr);column-gap:4mm;align-items:center}
+.fl-teller li:nth-child(even){grid-template-columns:minmax(0,1fr) 19mm}
+.fl-teller li:nth-child(even) .fl-teller__bild{order:2}
+.fl-teller__bild{width:19mm;aspect-ratio:1;border-radius:50%}
+.fl-teller__bild img{width:100%;height:100%;transform:rotate(var(--dreh,0deg))}
+.fl-teller li:nth-child(1){--dreh:-14deg}.fl-teller li:nth-child(2){--dreh:9deg}.fl-teller li:nth-child(3){--dreh:-4deg}
+.fl-teller li:nth-child(4){--dreh:16deg}.fl-teller li:nth-child(5){--dreh:-9deg}.fl-teller li:nth-child(6){--dreh:5deg}
+.fl-teller b{display:block;font-family:var(--display);font-weight:400;font-size:13.5pt;line-height:1.1;color:#FFF5E0}
+.fl-teller__satz{display:block;margin-top:.4mm;color:var(--tuch-tinte-2);font-size:12pt;line-height:1.32}
+.fl-p-anliegen .fl-fuss{margin-top:auto;padding-top:3mm;color:var(--tuch-tinte-2)}
+.fl-p-anliegen .fl-fuss b{color:#F3FBF7;font-weight:750}
+
+/* ---- Innen 2: Ablauf und Die Karte (Senf) ---------------------------------- */
+.fl-schritte{margin-top:4.5mm;display:grid;gap:3mm}
+.fl-schritte li{display:grid;grid-template-columns:11mm minmax(0,1fr);column-gap:3.2mm;align-items:start}
+.fl-nr{display:grid;place-items:center;width:11mm;aspect-ratio:1;border-radius:50%;font-family:var(--display);font-size:15pt;line-height:1;color:var(--himbeer-tief);
+  background:var(--porzellan);box-shadow:inset 0 0 0 1.1mm var(--porzellan),inset 0 0 0 1.6mm var(--ring,var(--kobalt)),0 .5mm 1.2mm rgba(96,52,0,.35)}
+.fl-schritte li:nth-child(2) .fl-nr{--ring:var(--tanne)}
+.fl-schritte li:nth-child(3) .fl-nr{--ring:var(--himbeer)}
+.fl-schritte b{display:block;font-weight:780;font-size:12.5pt;line-height:1.25;padding-top:.6mm}
+.fl-schritt__text{display:block;color:var(--tuch-tinte-2)}
+.fl-karte{position:relative;margin-top:auto;background:var(--porzellan);color:var(--aubergine);border-radius:1.2mm;padding:6mm 5.4mm 4.6mm;transform:rotate(1.2deg);
+  box-shadow:0 .6mm 1.1mm rgba(96,52,0,.25),0 3.6mm 6mm -1.6mm rgba(96,52,0,.5)}
+.fl-karte::before{content:"";position:absolute;inset:2mm;border:.35mm solid rgba(184,37,78,.3);border-radius:.6mm;pointer-events:none}
+.fl-karte h3{text-align:center;color:var(--himbeer-tief);font-size:17pt}
+.fl-karte__unter{text-align:center;color:var(--aubergine-weich)}
+.fl-posten{margin-top:3.4mm;display:grid;gap:2mm}
+.fl-posten li{display:grid;grid-template-columns:auto minmax(3mm,1fr);align-items:baseline;column-gap:1.4mm}
+.fl-posten__was{font-weight:760}
+.fl-posten__was small{display:block;font-weight:500;font-size:12pt;color:var(--aubergine-weich)}
+.fl-posten__punkte{display:none}
+.fl-posten li{padding-bottom:2mm;border-bottom:.5mm dotted rgba(42,30,34,.35)}
+.fl-posten li:last-child{border-bottom:0;padding-bottom:0}
+.fl-posten__preis{grid-column:1/-1;justify-self:end;font-weight:700;margin-top:.4mm}
+.fl-karte__fuss{margin-top:3.4mm;padding-top:2.6mm;border-top:.35mm dashed rgba(184,37,78,.35);color:var(--aubergine-weich)}
+
+/* ---- Innen 3: Klappe innen – Arbeitsweise (Kobalt) und Krise (Leinen) ------ */
+.fl-hinweis__oben{padding:11mm 12mm 5mm 7mm;flex:none}
+.fl-hinweis__oben .fl-h2{font-size:17pt;color:#fff}
+.fl-hinweis__oben .fl-h2 span{display:block;color:#F9CB6B}
+.fl-grund{margin-top:3mm;display:grid;gap:1.4mm}
+.fl-grund li{display:grid;grid-template-columns:7mm minmax(0,1fr);column-gap:2.4mm;color:var(--tuch-tinte-2)}
+.fl-grund svg{width:7mm;height:7mm;margin-top:.2mm}
+.fl-grund b{color:#fff;font-weight:750}
+.fl-borte{height:4.2mm;flex:none;background:url(../assets/svg/borte.svg) 0 0/4.2mm 4.2mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.fl-hinweis__unten{flex:1;min-height:0;padding:4mm 12mm 11mm 7mm;display:flex;flex-direction:column}
+.fl-krise{flex:1;background:var(--porzellan);border-radius:1.2mm;padding:4mm 4.2mm 3.6mm;display:flex;flex-direction:column;
+  box-shadow:0 .5mm 1mm rgba(96,30,44,.2),0 2.6mm 5mm -1.6mm rgba(96,30,44,.4)}
+.fl-krise h2{font-family:var(--display);font-weight:400;font-size:15pt;line-height:1.1;color:var(--tanne-tief)}
+.fl-krise__notruf{margin-top:1.6mm;display:flex;align-items:baseline;gap:2.4mm;font-weight:700}
+.fl-krise__notruf b{font-family:var(--display);font-weight:400;font-size:20pt;line-height:1;color:var(--tanne-tief)}
+.fl-nummern{margin-top:1.4mm}
+.fl-nummern li{padding:1.3mm 0;border-top:.35mm dashed rgba(31,92,74,.35)}
+.fl-nummern__wer{display:block;font-weight:700}
+.fl-nummern__ruf{display:block;font-weight:780;font-variant-numeric:tabular-nums lining-nums;color:var(--tanne-tief);white-space:nowrap}
+.fl-nummern__wann{display:block;color:var(--aubergine-weich)}
+.fl-krise__abgrenzung{margin-top:auto;padding-top:2.4mm;border-top:.35mm dashed rgba(31,92,74,.35);color:var(--aubergine-weich)}
+
+/* Bildschirm: Breite einpassen (Fallback ohne JavaScript) -------------------- */
+@media screen and (max-width:1200px){.fl-stapel{--z:.8}}
+@media screen and (max-width:960px){.fl-stapel{--z:.6}}
+@media screen and (max-width:720px){.fl-stapel{--z:.45}}
+@media screen and (max-width:540px){.fl-stapel{--z:.31}}
+@media screen and (max-width:600px){
+  .fl-leiste{padding-inline:16px}
+  .fl-entwurf{padding-inline:16px}
+}
+
+/* Druck ---------------------------------------------------------------------- */
+@media print{
+  html,body.fl{background:#fff;margin:0;padding:0}
+  .fl-leiste,.fl-entwurf,.fl-ansicht__titel,.fl-schnitt,.fl-falz{display:none!important}
+  .fl-stapel{zoom:1!important;width:auto;margin:0;padding:0}
+  .fl-ansicht{margin:0}
+  .fl-blatt{page:endformat;width:297mm;height:210mm;box-shadow:none;break-after:page}
+  .fl-ansicht:last-of-type .fl-blatt{break-after:auto}
+  .fl-blatt .fl-bogen{margin:-3mm 0 0 -3mm}
+  html.mit-beschnitt .fl-blatt{page:beschnitt;width:303mm;height:216mm}
+  html.mit-beschnitt .fl-blatt .fl-bogen{margin:0}
+}
+
+/* Tuchflächen im Druckmaß: Gewebe in Millimetern statt Pixeln */
+.fl-panel .tuch,.fl-panel.tuch{background-size:42mm 42mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+/* Rückseite: eine Tasse steht neben der Tischkarte */
+.fl-rueck__satz{margin-top:5mm;color:var(--tuch-tinte-2)}
+.fl-rueck__tasse{position:relative;align-self:flex-end;width:34mm;margin:auto 2mm -3mm 0;transform:rotate(14deg)}
+.fl-rueck__tasse img{width:100%;height:auto}
+.fl-rueck__fuss{margin-top:0}
+.fl-klappe__ort{margin-top:2.6mm}
+
+/* Druckschrift: Figtree als statische Schnitte (v3.0.1) ---------------------
+   Die variable Figtree aus site.css landet im PDF als Type3-Schrift. Für Flyer
+   und Visitenkarte deshalb feste Schnitte je benutzter Stärke, erzeugt mit
+   fontTools (varLib.instancer) aus Figtree[wght].ttf von Google Fonts, Lizenz
+   OFL 1.1 (../assets/fonts/figtree-static/OFL.txt). Chrome bettet sie als
+   TrueType ein. */
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:400;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-400.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:500;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-500.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:600;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-600.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:650;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-650.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:700;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-700.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:750;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-750.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:760;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-760.woff2) format("woff2")}
+@font-face{font-family:"Figtree Druck";font-style:normal;font-weight:780;font-display:block;src:url(../assets/fonts/figtree-static/figtree-druck-780.woff2) format("woff2")}
+body.fl{--text:"Figtree Druck","Figtree",ui-sans-serif,"Segoe UI",system-ui,sans-serif}
+
+/* Druckflächen als Vektor (v3.0.1, siehe druck-vektor.js) -------------------
+   Im Druck tragen nicht die einzelnen Panele die Tuchfarbe, sondern eine
+   durchgehende Grundfläche je Bogen (.druck-grund): keine Naht am Falz,
+   Gewebe als Vektorlinien statt gerasterter Kachel. Karoband und
+   Polaroid-Punkte ebenso als SVG. Am Bildschirm bleibt die CSS-Gestaltung. */
+.druck-grund{position:absolute;left:0;top:0;width:303mm;height:216mm;pointer-events:none}
+.druck-karo,.druck-punkte{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.fl-borte{position:relative;overflow:hidden}
+.fl-polaroid__flaeche{position:relative;overflow:hidden}
+.fl-polaroid__flaeche>:not(svg){position:relative;z-index:1}
+@media screen{.druck-grund,.druck-karo,.druck-punkte{display:none}}
+@media print{
+  .fl-bogen .tuch,.fl-bogen .tuch.fl-panel{background:transparent none!important}
+  .fl-borte,.fl-polaroid__flaeche{background:none!important}
+}

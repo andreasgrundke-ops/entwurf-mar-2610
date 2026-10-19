@@ -1,0 +1,115 @@
+/* Grundke IT-Service · CI 2026.01 · Konzeptseite und QR-Kasten für Entwurf v3 (ergänzt hub.css) */
+@font-face{font-family:"Caprasimo";font-style:normal;font-weight:400;font-display:swap;src:url("../assets/fonts/caprasimo/caprasimo-latin.woff2") format("woff2")}
+@font-face{font-family:"Caprasimo";font-style:normal;font-weight:400;font-display:swap;src:url("../assets/fonts/caprasimo/caprasimo-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+1E00-1EFF}
+@font-face{font-family:"Figtree";font-style:normal;font-weight:400 800;font-display:swap;src:url("../assets/fonts/figtree/figtree-latin.woff2") format("woff2")}
+
+/* Sprungmarken */
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.toc a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:8px;background:#fff;border:1px solid var(--border);font-weight:700;text-decoration:none}
+.toc a:hover{border-color:var(--accent)}
+
+/* Kapitel */
+.kap{margin:60px 0 0;scroll-margin-top:16px}
+.kap>h2{font-size:clamp(1.5rem,1.2rem + 1.2vw,2rem);font-weight:800;line-height:1.2;max-width:30ch;text-wrap:balance}
+.kap>.lead{margin-top:10px;font-size:1.08rem;color:var(--text2);max-width:64ch}
+.text{max-width:68ch}
+.text p{margin-top:12px}
+.text p:first-child{margin-top:0}
+.blatt{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin-top:20px}
+.blatt h3{font-size:1.08rem;font-weight:800}
+.blatt h3+p,.blatt h3+ul{margin-top:6px}
+.blatt p,.blatt li{color:var(--text2)}
+.blatt ul{padding-left:1.2em;margin:6px 0 0}
+
+/* Idee: Tischbild */
+.idee{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:32px;align-items:center;margin-top:24px}
+.idee figure{margin:0}
+.idee figure img{display:block;width:100%;height:auto;border-radius:12px 12px 0 0;background:#B8254E}
+.idee figcaption{background:#fff;border:1px solid var(--border);border-top:0;border-radius:0 0 12px 12px;padding:10px 14px;font-size:.9rem;color:var(--text2)}
+
+/* Gestaltungs-Zutaten */
+.zutaten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}
+.zutat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px}
+.zutat h3{font-size:1.05rem;font-weight:800}
+.zutat p{color:var(--text2);margin-top:6px}
+.farben{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;padding:0;list-style:none}
+.farben li{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:.8rem;color:var(--text2);width:60px}
+.farben span{width:44px;height:44px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.schrift-probe{margin-top:12px;font-family:"Caprasimo",Georgia,serif;font-size:1.6rem;line-height:1.15;color:#B8254E}
+.schrift-probe small{display:block;font-family:"Figtree","Manrope",sans-serif;font-size:1rem;color:var(--text);margin-top:6px}
+.teller-reihe{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.teller-reihe img{width:44px;height:44px}
+.karte-probe{display:inline-block;margin-top:14px;background:#FFFCFB;color:#2A1E22;font-family:"Caprasimo",Georgia,serif;font-size:1.1rem;padding:10px 18px;border-radius:4px;box-shadow:0 6px 14px -6px rgba(42,30,34,.45);border-top:3px solid #B8254E;transform:rotate(-1.5deg)}
+
+/* Gegenüberstellung */
+.vergl{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px}
+.vergl li{background:var(--card);border:1px solid var(--border);border-radius:12px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.vergl .oft,.vergl .hier{padding:16px 20px}
+.vergl .oft{color:var(--text2);border-right:1px solid var(--border)}
+.vergl .hier{background:var(--accent-bg);border-radius:0 12px 12px 0}
+.vergl .k{display:block;font-size:.85rem;font-weight:700;color:#666;margin-bottom:4px}
+.vergl .hier .k{color:var(--accent)}
+.lob{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.lob .blatt{margin-top:0}
+
+/* Was ist drin */
+.drin{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.drin a{display:block;height:100%;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;text-decoration:none;color:var(--text)}
+.drin a:hover{border-color:var(--accent)}
+.drin strong{display:block;color:var(--accent);font-size:1.05rem}
+.drin span{display:block;color:var(--text2);margin-top:4px}
+
+/* Technik */
+.technik{list-style:none;padding:0;margin:20px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.technik li{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 22px}
+.technik h3{font-size:1.02rem;font-weight:800}
+.technik p{color:var(--text2);margin-top:6px}
+.mockup-hinweis{margin-top:14px;background:#fff8e6;border:1px solid #f0d9a0;border-radius:12px;padding:18px 22px}
+.mockup-hinweis p+p{margin-top:6px}
+
+/* Fragen */
+.fragen{margin-top:20px;display:grid;gap:8px}
+.fragen details{background:var(--card);border:1px solid var(--border);border-radius:12px}
+.fragen summary{cursor:pointer;list-style:none;display:flex;gap:14px;align-items:center;min-height:56px;padding:12px 20px;font-weight:700;font-size:1.02rem}
+.fragen summary::-webkit-details-marker{display:none}
+.fragen summary::before{content:"";flex:none;width:9px;height:9px;border-right:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);transform:rotate(-45deg);transition:transform .2s ease-out}
+.fragen details[open] summary::before{transform:rotate(45deg)}
+.fragen summary:hover{color:var(--accent)}
+.fragen details p{padding:0 20px 18px 43px;color:var(--text2);max-width:72ch}
+.antwort{margin-top:20px;background:var(--accent);color:#fff;border-radius:12px;padding:24px}
+.antwort p{max-width:64ch}
+.antwort p+p{margin-top:8px}
+.antwort a{color:#fff;font-weight:700;text-underline-offset:3px}
+
+/* QR-Kasten (auch im Hub) */
+.qr-kasten{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;margin:36px 0 24px}
+.qr-kasten h2{font-size:1.25rem;font-weight:800}
+.qr-kasten>p{color:var(--text2);max-width:64ch;margin-top:4px}
+.qr-reihe{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.qr-reihe li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--bg)}
+.qr-reihe img{width:156px;height:156px;background:#fff;border-radius:6px}
+.qr-reihe strong{font-size:1rem}
+.qr-reihe small{color:var(--text2);font-size:.875rem}
+.qr-reihe a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:8px;background:var(--accent-bg);font-weight:700;text-decoration:none}
+
+/* Hub: Konzept-Kachel */
+.konzept-kachel{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 24px;align-items:center;background:var(--accent);color:#fff;border-radius:12px;padding:22px 26px;margin:24px 0 8px}
+.konzept-kachel h2{font-size:1.35rem;font-weight:800}
+.konzept-kachel p{margin-top:4px;color:#e8f0fb;max-width:60ch}
+.konzept-kachel .btn{background:#fff;color:var(--accent)}
+.konzept-kachel .btn:hover{background:var(--accent-bg)}
+
+.ki{font-size:.875rem;color:var(--text2);margin-top:28px;max-width:68ch}
+
+@media (max-width:760px){
+  .idee,.zutaten,.lob,.technik,.drin{grid-template-columns:1fr}
+  .vergl li{grid-template-columns:1fr}
+  .vergl .oft{border-right:0;border-bottom:1px solid var(--border)}
+  .vergl .hier{border-radius:0 0 12px 12px}
+  .qr-reihe{grid-template-columns:1fr}
+  .qr-reihe img{width:180px;height:180px}
+  .konzept-kachel{grid-template-columns:1fr;justify-items:start}
+  .fragen details p{padding-left:20px}
+}
+@media (prefers-reduced-motion:reduce){.fragen summary::before{transition:none}}
+.maker+.qr-kasten{margin-top:0}
